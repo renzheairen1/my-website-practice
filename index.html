@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>science blog|科普博客</title>
+    <link rel="stylesheet" href="css/index-blog.css">
+    <link rel="icon" href="image/网页icon.png" type="image/png">
+    <style>
+        .main-content {
+            margin-top: 90px;/*与顶部距离为90px，避免与顶部重叠*/
+            display: flex;
+            flex-direction: column;/*内容纵向排列*/
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .intro-text {
+            max-width: 800px;/*设置最大宽度为800px，如果内容超出这个宽度，自动换行，以便适应不同屏幕大小*/
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;/*初始不透明度为0，即完全透明*/
+            transform: translateY(20px);/*初始位置向下移动20px*/
+        }
+        
+        .intro-text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .intro-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;/*设置行间距为字体大小的1.6倍*/
+            color: #7f8c8d;
+        }
+        
+        .image-carousel {
+            width: 65%;/*设置宽度为65%*/
+            height: 400px;
+            margin: 0 auto 50px;/*上外边距为0，下外边距为50px，左右自动，即居中*/
+            position: relative;
+            perspective: 3000px;/*设置3D效果的深度为3000px*/
+        }
+        
+        .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;/*保留子元素的3D效果，如不设置，子元素的3D效果可能会消失*/
+            transition: transform 1s;/*transform属性发生变化时，变化会平滑，持续1s的过渡效果*/
+        }
+        
+        .carousel-item {
+            position: absolute;
+            width: 40%;
+            height: 80%;
+            left: 30%;/*这两行为了让图片居中*/
+            right:45%;
+            top: 10%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);/*阴影在水平方向上的偏移量为0，垂直方向上的偏移量为10px，模糊半径为20px，颜色为黑色，透明度0.2*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            overflow: hidden;/*隐藏 .carousel-item 内溢出的内容*/
+            transition: transform 0.5s, opacity 0.5s;/*transform属性发生变化时，变化会平滑，持续0.5s的过渡效果，opacity属性发生变化时，变化会平滑，持续0.5s的过渡效果*/
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;/*设置图片按比例缩放，以完全覆盖其父容器的整个区域*/
+        }
+        
+        .start-button {
+            background-color: rgba(52, 152, 219, 0.8);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;/*设置鼠标悬停时的光标样式-手型*/
+            transition: all 0.3s;/*当任何属性发生变化时，都会有一个持续0.3s的过渡效果*/
+            backdrop-filter: blur(5px);/*设置5px的背景模糊*/
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);/*水平阴影偏移量为0，垂直阴影偏移量为5px，模糊半径为15px，颜色为黑色，透明度0.2*/
+        }
+        /*改变鼠标悬停时的效果，如背景色、位置、阴影等*/
+        .start-button:hover {
+            background-color: rgba(41, 128, 185, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页眉部分：左上是姓名和图标，右上是导航 -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">love</div>
+            <div class="name">Pikachu</div>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="active">home</a>
+            <a href="html/content-navigation.html">science</a>
+        </nav>
+    </header>
+    
+    <!-- 主要内容 -->
+    <div class="main-content">
+        <!-- 介绍文字 -->
+        <div class="intro-text" id="introText">
+            <h1>Hello & Welcome</h1>
+            <p>欢迎来到我的博客，我们致力于用简单易懂的语言解释复杂的疾病，让健康变得触手可及。</p>
+            <p>无论你是医学爱好者还是养生人士，这里都有适合你的内容。跟我们一起踏上探索的旅程，发现长寿的奥秘！</p>
+        </div>
+        
+        <!-- 图片 -->
+        <div class="image-carousel">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-item" style="transform: rotateY(0deg) translateZ(400px);">
+                    <img src="image\科普图片1.png" alt="科学图片1">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(51.4deg) translateZ(400px);">
+                    <img src="image\科普图片2.png" alt="科学图片2">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(102.8deg) translateZ(400px);">
+                    <img src="image\科普图片3.png" alt="科学图片3">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(154.2deg) translateZ(400px);">
+                    <img src="image\科普图片4.jpg" alt="科学图片4">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(205.6deg) translateZ(400px);">
+                    <img src="image\科普图片5.jpg" alt="科学图片5">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(257deg) translateZ(400px);">
+                    <img src="image\科普图片6.png" alt="科学图片6">
+                </div>
+                <div class="carousel-item" style="transform: rotateY(308.4deg) translateZ(400px);">
+                    <img src="image\科普图片7.jpg" alt="科学图片7">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 开始按钮 -->
+        <button class="start-button" id="startButton">快点我，快点我!</button>
+    </div>
+    
+    <script>
+        // 文字逐渐浮现效果
+        window.addEventListener('DOMContentLoaded', () => {
+            const introText = document.getElementById('introText');
+            introText.style.animation = 'fadeIn 2s forwards';
+            
+            // 轮播图的旋转
+            let angle = 0;
+            const carousel = document.getElementById('carouselContainer');
+            const itemCount = document.querySelectorAll('.carousel-item').length;
+            const angleIncrement = 360 / itemCount;
+            
+            // 自动轮播
+            setInterval(() => {
+                angle += angleIncrement;
+                carousel.style.transform = `rotateY(${angle}deg)`;
+            }, 3000);
+            
+            // 开始按钮的点击事件
+            document.getElementById('startButton').addEventListener('click', () => {
+                window.location.href = 'html/content-navigation.html';
+            });
+        });
+    </script>
+</body>
+</html>
