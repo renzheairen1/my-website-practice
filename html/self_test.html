@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牙周病风险自测表</title>
+    <link rel="stylesheet" href="../css/periodontal-style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>牙周病风险自测</h1>
+        <nav class="nav">
+            <a href="index.html">home</a>
+            <a href="content-navigation.html">science</a>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="periodontal-disease.html">首页</a></li>
+                <li><a href="causes.html">病因</a></li>
+                <li><a href="symptoms.html">症状</a></li>
+                <li><a href="prevention.html">预防</a></li>
+                <li><a href="treatment.html">治疗</a></li>
+                <li><a href="self_test.html">牙周病风险自测</a></li>
+                <li><a href="body-health.html">牙周病与全身健康</a></li>
+                <li><a href="resources.html">相关资源</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="treatment" class="animated">
+            <h2>牙周病的治疗方法</h2>
+            <img src="E:\experiment\vit\R.jpg" alt="牙周病示意图">
+            <p>关于“子元素又加了一个靠左的属性听谁的”：
+                如果子元素单独设置了 align-self: flex-start;，那么它会覆盖父级的 align-items: center;，并靠顶部对齐（如果主轴是水平的）。
+                如果你是想问水平对齐，比如 margin-left: auto; 或 text-align: left;：
+                margin-left: auto; 在 display: flex; 下会让该元素靠右对齐，但不会影响其他子元素。
+                text-align: left; 只影响文本对齐，不会影响 flex 布局下的子元素对齐。
+                简单总结：
+                
+                align-items: center; 控制的是**交叉轴（垂直方向）**的对齐方式，子元素 align-self 可以覆盖它。
+                justify-content: center; 控制的是**主轴（水平方向）**的对齐方式。
+                具体还要看 flex-direction，因为它决定了主轴和交叉轴的方向。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><small> 2025 牙周健康科普 本网页由三个神秘人完成 如有侵权，联系删除</small></p>
+        <button id="back-to-top">返回顶部</button>
+    </footer>
+</body>
+</html>

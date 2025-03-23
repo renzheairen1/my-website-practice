@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牙周病科普</title>
+    <link rel="stylesheet" href="../css/periodontal-style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>牙周病症状</h1>
+        <nav class="nav">
+            <a href="index.html">home</a>
+            <a href="content-navigation.html">science</a>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="periodontal-disease.html">首页</a></li>
+                <li><a href="causes.html">病因</a></li>
+                <li><a href="symptoms.html">症状</a></li>
+                <li><a href="prevention.html">预防</a></li>
+                <li><a href="treatment.html">治疗</a></li>
+                <li><a href="self_test.html">牙周病风险自测</a></li>
+                <li><a href="body-health.html">牙周病与全身健康</a></li>
+                <li><a href="resources.html">相关资源</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="intro" class="animated">
+            <h2 style="text-align: center;">牙周病的症状</h2>
+            <img src="E:\experiment\vit\R.jpg" alt="牙周病示意图">
+            <p>牙周病，其实就是牙齿周围的“地基”（即牙齿周围的骨头）出了问题，就像房子的地基松了，房子就会摇晃，牙齿也一样。它的主要症状有以下几个：</p>
+            <p><strong>牙龈出血：</strong>刷牙或咬东西时，牙龈容易出血，像是碰了一下就破了。这说明牙龈已经发炎，血管变得脆弱。</p>
+            <p><strong>口臭：</strong>早上起床或者平时讲话时，口腔总是有一股难闻的味道，刷牙后也很快又出现。这可能是细菌在牙龈里“作怪”了。</p>
+            <p><strong>牙龈肿胀、颜色变深：</strong>健康的牙龈是粉红色的，但如果发炎了，就会变红甚至发紫，摸上去可能还会肿胀、酸痛。</p>
+            <p><strong>牙缝变大：</strong>牙龈萎缩后，牙齿之间的缝隙会变大，吃东西时容易塞牙，这就像围墙倒了，露出了更大的空隙。</p>
+            <p><strong>牙齿松动、变长：</strong>牙龈和牙槽骨被破坏后，牙齿的“根”就露出来了，看起来比以前长了，而且可能会摇晃，甚至严重时会掉落。</p>
+            <p>这些症状看起来可能不严重，但如果不及时处理，牙齿就像房子地基塌了一样，最终可能撑不住。但如果早发现、早治疗，仍然有机会维持症状不加重</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><small> 2025 牙周健康科普 本网页由三个神秘人完成 如有侵权，联系删除</small></p>
+        <button id="back-to-top">返回顶部</button>
+    </footer>
+
+    <script>
+        // 获取按钮元素
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // 监听按钮点击事件
+        backToTopButton.addEventListener('click', () => {
+            // 使用平滑滚动效果返回顶部
+            window.scrollTo({
+                top: 0, // 滚动到页面顶部
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    </script>
+</body>
+</html>

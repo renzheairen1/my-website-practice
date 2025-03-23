@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科普内容导航 - Navigation of popular science content</title>
+    <link rel="stylesheet" href="../css/index-blog.css">
+    <link rel="icon" href="../image/网页icon.png" type="image/png">
+    <style>    
+        .nav a.active {
+            color: #3498db;
+        }
+        
+        .science-content {
+            margin-top: 120px;
+            padding: 20px 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .category-nav {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;/*设置子元素之间的间隔为15px*/
+            flex-wrap: wrap;/*如果子元素的总宽度超过了父容器（.category-nav）的宽度，子元素会自动换行到下一行*/
+        }
+        
+        .category-nav button {
+            padding: 8px 20px;
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;/*鼠标悬停时显示光标为手型*/
+            transition: all 0.3s;/*设置过渡效果0.3s*/
+        }
+        
+        .category-nav button:hover, .category-nav button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));/*自动充填尽可能多的列，每列的最小宽度为300px，最大宽度为1fr*/
+            gap: 30px;/*子元素之间的间隔为30px*/
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 10px;/*让四个角圆润*/
+            overflow: hidden;/*内容超出时隐藏*/
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);/*黑色阴影，垂直偏移量5px，模糊半径15px*/
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;/*初始完全透明*/
+            transform: translateY(20px);/*初始垂直方向位移20px*/
+            animation: fadeIn 0.8s forwards;/*添加一个名为fadein的动画，持续0.8s，以动画最终完成时的状态显示*/
+            animation-delay: calc(var(--delay) * 0.2s);/*为动画设置延迟，随着delay的不同，动画的开始时间也不同*/
+        }
+        
+        /*鼠标悬停时，向上移动5px，并加上黑色阴影*/
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;/*图片会保持其原始的宽高比例（即不会变形）。图片会被放大或缩小，以完全覆盖容器的整个区域。如果图片的宽高比例与容器的宽高比例不一致，图片可能会被裁剪*/
+            transition: transform 0.5s;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-tag {
+            display: inline-block;/*元素在页面中以行方式排列，但同时可以设置宽度和高度*/
+            padding: 4px 10px;
+            background-color: #e3f2fd;/*看起来是白色，实际是淡蓝色*/
+            color: #2980b9;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .article-excerpt {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
+            font-size: 13px;
+            color: #95a5a6;
+        }
+        
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--导航栏 - 左上是姓名和图标，右上是导航 -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">love</div>
+            <div class="name">Pikachu</div>
+        </div>
+        <nav class="nav">
+            <a href="index.html">home</a>
+            <a href="content-navigation.html" class="active">science</a>
+        </nav>
+    </header>
+    
+    <!-- 科普导航区域 -->
+    <div class="science-content">
+        <!-- 分类导航 -->
+        <div class="category-nav" id="categoryNav">
+            <button class="active" data-category="all">全部</button>
+            <button data-category="Periodontal disease">牙周病</button>
+            <button data-category="caries">龋病</button>
+            <button data-category="oral cancer">口腔癌</button>
+            <button data-category="Oral first aid">口腔急救</button>
+            <button data-category="technology">最新技术</button>
+        </div>
+        
+        <!-- 文章网格 -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- 文章卡片示例 - 将通过JS动态生成 -->
+        </div>
+    </div>
+    
+    <script>
+        // 模拟文章数据，数组里面放对象，对象里面包含文章的相关信息
+        const articles = [
+            {
+                id: 1,
+                title: "牙周病：沉默的杀手",
+                excerpt: "牙周病是一种影响牙齿周围组织的慢性炎症性疾病，主要包括牙龈和支撑牙齿的骨骼。它通常由牙菌斑（一种细菌聚集的薄膜）引起，如果不及时清除，牙菌斑会硬化成牙石，进一步刺激牙龈。",
+                image: "../image/牙周病图片1.jpg",
+                category: "Periodontal disease",
+                tag: "牙周病",
+                date: "2025-03-23",
+                url:"periodontal-disease.html",
+            },
+            {
+                id: 2,
+                title: "马上更新",
+                excerpt: "",
+                image: "/api/placeholder/600/400",
+                category: "",
+                tag: "",
+                date: "",
+                url:"sss"
+            },
+            {
+                id: 3,
+                title: "马上更新",
+                excerpt: "",
+                image: "/api/placeholder/600/400",
+                category: "",
+                tag: "",
+                date: "",
+                url:"sssss",
+            },
+            {
+                id: 4,
+                title: "马上更新",
+                excerpt: "",
+                image: "/api/placeholder/600/400",
+                category: "",
+                tag: "",
+                date: "",
+                url:"",
+            },
+            {
+                id: 5,
+                title: "马上更新",
+                excerpt: "",
+                image: "/api/placeholder/600/400",
+                category: "",
+                tag: "",
+                date: "",
+                url:"",
+            },
+            {
+                id: 6,
+                title: "马上更新",
+                excerpt: "",
+                image: "/api/placeholder/600/400",
+                category: "",
+                tag: "",
+                date: "",
+                url:"",
+            }
+        ];
+        
+        // 渲染文章卡片函数
+        function renderArticles(category = 'all') {
+            const grid = document.getElementById('articlesGrid');//const定义的常量，声明时必须进行初始化，且初始化后不可再修改。
+            grid.innerHTML = '';
+            
+            const filteredArticles = category === 'all' ?
+                articles : 
+                articles.filter(article => article.category === category);
+            
+            filteredArticles.forEach((article, index) => {
+                const card = document.createElement('div');
+                card.className = 'article-card';
+                card.style.setProperty('--delay', index);
+                
+                card.innerHTML = `
+                    <div class="article-image">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-tag">${article.tag}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-footer">
+                            <span>${article.date}</span>
+                            <a href=${article.url} class="read-more">阅读更多</a>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        // 分类导航点击事件
+        document.getElementById('categoryNav').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                // 更新活动按钮样式
+                document.querySelectorAll('#categoryNav button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.target.classList.add('active');
+                
+                // 渲染对应分类的文章
+                renderArticles(e.target.dataset.category);
+            }
+        });
+        
+        // 初始渲染
+        window.addEventListener('DOMContentLoaded', () => {
+            renderArticles();
+        });
+    </script>
+</body>
+</html>
