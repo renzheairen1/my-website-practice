@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="医学科普知识，包括牙周病、口腔癌、龋病等疾病以及它们的症状、治疗和预防方法，帮助您维护身体健康。">
+    <meta name="keywords" content="口腔健康, 健康护理, 健康科普">
+    <meta name="author" content="Pikachu">
+    <meta name="robots" content="index, follow">
+    <title>science blog|科普博客</title>
+    <link rel="stylesheet" href="../css/index-blog.css">
+    <link rel="icon" href="../image/网页icon.png" type="image/x-icon">
+    <style>
+        .main {
+            margin-top: 90px;/*与顶部距离为90px，避免与顶部重叠*/
+            display: flex;
+            flex-direction: column;/*内容纵向排列*/
+            align-items: center;/*水平居中*/
+            padding: 20px;
+        }
+
+        .text{max-width: 800px;/*设置最大宽度为800px，如果内容超出这个宽度，自动换行，以便适应不同屏幕大小*/
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;/*初始不透明度为0，即完全透明*/
+            transform: translateY(20px);/*初始位置向下移动20px*/
+            animation: fadeIn 1s ease-out forwards;
+
+        }
+
+        .text h2{
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .text p{
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+
+        .img {
+        animation: shake 2s ease-in-out infinite;
+        }
+
+        a {
+            text-decoration: none;/*去掉下划线*/
+            color: #0b7ef1;
+            font-weight: 500;/*字体粗细为500，中等粗细*/
+            font-size: 18px;
+            transition: color 0.3s;/*颜色变化的过渡，指定过渡效果于color属性，持续0.3s*/
+        }
+        
+        a:hover {
+            color: #6f787e;/*鼠标悬停时颜色变化为蓝色*/
+        }
+
+        @keyframes fadeIn {
+            to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo"><img src="../image/网页icon.png" width="30" height="30" alt="科普博客logo"></div>
+            <div class="name">Pikachu</div>
+        </div>
+        <nav class="nav">
+            <a href="../index.html" class="active">Home</a>
+            <a href="content-navigation.html">Science</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        
+        <div class="text">
+            <h2>关于我们</h2>
+            <p>我们是爱党爱国爱社会主义的新青年</p>
+            <p>合众地区的宝可梦大师</p>
+            <p>霍格沃茨大魔法师</p>
+            <p>东吴大帝</p>
+            <p>百万网红</p>
+            <p>蒙娜丽莎鉴赏者</p>
+            <p>故宫博物院参观者</p>
+            <p>穷尽文字也难以完美描述的天选之人</p>
+        </div>
+
+        <div class="text">
+            <h2>关于页面</h2>
+            <p>一些页面的结构参考了<a href="https://limengxun.com/">Li Mengxun's blog</a></p>
+            <p>一些页面的背景色参考了 <a href="https://kimi.moonshot.cn/">kimi</a></p>
+        </div>
+
+        <div class="text">
+            <h2>关于logo</h2>
+            <p> 我们的logo选择了四叶草</p>
+            <img class="img" src="../image/网页icon.png" width="300" height="300" alt="科普博客logo">
+            <p>因为四叶草的花语是希望、信仰、爱和幸运。这符合我们的初衷与理念</p>
+        </div>
+    </main>
+</body>
+</html>

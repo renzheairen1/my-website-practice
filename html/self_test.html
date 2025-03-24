@@ -6,6 +6,7 @@
     <title>牙周病风险自测表</title>
     <link rel="stylesheet" href="../css/periodontal-style.css">
     <script defer src="script.js"></script>
+    <link rel="icon" href="../image/网页icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -50,5 +51,19 @@
         <p><small> 2025 牙周健康科普 本网页由三个神秘人完成 如有侵权，联系删除</small></p>
         <button id="back-to-top">返回顶部</button>
     </footer>
+
+    <script>//给按钮回到顶部的效果
+        // 获取按钮元素
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // 监听按钮点击事件
+        backToTopButton.addEventListener('click', () => {
+            // 使用平滑滚动效果返回顶部
+            window.scrollTo({
+                top: 0, // 滚动到页面顶部
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    </script>
 </body>
 </html>

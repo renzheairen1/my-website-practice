@@ -10,8 +10,8 @@ body {
 }
 header {
     width: 100%;/*占满整个宽度*/
-    background: #007BFF;/*背景色蓝色*/
-    color: white;/*字体白色，其实不好看，但是本人艺术细胞有限，想不到好的配色*/
+    background: linear-gradient(to bottom, #e6f7ff, #ffffff);/*背景色浅蓝色到白色*/
+    color: #333333;/*字体黑色，其实不好看，但是本人艺术细胞有限，想不到好的配色*/
     padding: 10px 0;
     text-align: center;
     position: relative;
@@ -28,7 +28,7 @@ header {
     right: 10px;
     margin-left: 20px;
     text-decoration: none;
-    color: #dfece5;
+    color: #333333;
     font-weight: 500;
     font-size: 18px;
     transition: color 0.3s;
@@ -48,7 +48,7 @@ nav ul li {
     display: inline;/*水平片列*/
 }
 nav ul li a {
-    color: white;
+    color: #333333;
     text-decoration: none;/*去掉下划线*/
     font-size: 18px;
 }
