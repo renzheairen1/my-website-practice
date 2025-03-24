@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牙周病科普</title>
+    <link rel="stylesheet" href="../css/periodontal-style.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="../image/网页icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <h1>牙周病病因</h1>
+        <nav class="nav">
+            <a href="../index.html">home</a>
+            <a href="content-navigation.html">science</a>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="periodontal-disease.html">首页</a></li>
+                <li><a href="causes.html">病因</a></li>
+                <li><a href="symptoms.html">症状</a></li>
+                <li><a href="prevention.html">预防</a></li>
+                <li><a href="treatment.html">治疗</a></li>
+                <li><a href="self_test.html">牙周病风险自测</a></li>
+                <li><a href="body-health.html">牙周病与全身健康</a></li>
+                <li><a href="resources.html">相关资源</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="intro" class="animated">
+            <h2 style="text-align: center;">牙垢和细菌堆积——主谋</h2>
+            <img src="E:\experiment\vit\R.jpg" alt="牙周病示意图">
+            <p>我们的嘴巴每天都在进食，食物残渣如果没清理干净，就会变成细菌的“食物”。细菌大量繁殖后，会形成一层黏乎乎的薄膜，紧贴在牙齿和牙龈上。时间长了，这些脏东西就会变硬，变成牙结石，像石头一样附着在牙齿根部，刺激牙龈发炎，破坏牙齿的支撑结构。</p>
+        </section>
+
+        <section id="intro2" class="animated">
+            <h2 style="text-align:center">刷牙方式不对——帮凶</h2>
+            <p>很多人以为自己每天刷牙就没问题了，但如果刷得不够干净，或者方法不对，一些死角的污垢还是会慢慢堆积，形成顽固的牙结石，长期下来，牙周病就找上门了。</p>
+            <p>正确的刷牙方式为巴氏刷牙法，以下为教学视频：</p>
+            <video width="320" height="240" controls>
+                <source src="../bass.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="movie.webm" type="video/webm">
+                <object data="movie.mp4" width="320" height="240">
+                  <embed src="movie.swf" width="320" height="240">
+                </object>
+              </video>
+        </section>
+
+        <section id="intro3" class="animated">
+            <h2 style="text-align:center">吸烟——加速器</h2>
+            <p>烟雾中的有害物质会影响牙龈的健康，让它更容易发炎、更难修复。所以，吸烟者比不吸烟的人更容易得牙周病，而且病情发展更快，等发现时往往已经很严重了。</p>
+        </section>
+        
+        <section id="intro4" class="animated">
+            <h2 style="text-align:center">牙齿咬合不均——隐形推手</h2>
+            <p>如果某些牙齿咬合力过大或不均匀，长期受力过度，就像一根柱子被长期摇晃，周围的地基（牙槽骨）会慢慢塌陷，牙齿也会变得松动，更容易让牙周病恶化。</p>
+        </section>
+
+        <section id="intro5" class="animated">
+            <h2 style="text-align:center"> 其他健康问题——幕后黑手</h2>
+            <p>有些全身健康问题（比如糖尿病）会影响牙龈的抵抗力，让它更容易受细菌感染，一旦有炎症，就不容易痊愈，牙周病也就更难控制。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><small> 2025 牙周健康科普 本网页由三个神秘人完成 如有侵权，联系删除</small></p>
+        <button id="back-to-top">返回顶部</button>
+    </footer>
+
+    <script>
+        // 获取按钮元素
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // 监听按钮点击事件
+        backToTopButton.addEventListener('click', () => {
+            // 使用平滑滚动效果返回顶部
+            window.scrollTo({
+                top: 0, // 滚动到页面顶部
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    </script>
+</body>
+</html>

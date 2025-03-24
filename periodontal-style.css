@@ -1,0 +1,129 @@
+/*此文件用来设置牙周病页面样式如（periodoantal-disease）*/
+body {
+    display: flex;
+    flex-direction: column;/*各板块垂直排列*/
+    align-items: center; /* 内容整体垂直居中 */
+    justify-content: center; /* 内容整体水平居中 */
+    min-height: 50vh;/* 页面最小高度为100vh*/
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    width: 100%;/*占满整个宽度*/
+    background: linear-gradient(to bottom, #e6f7ff, #ffffff);/*背景色浅蓝色到白色*/
+    color: #333333;/*字体黑色，其实不好看，但是本人艺术细胞有限，想不到好的配色*/
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+/*.nav和nav的区别是，一个是类选择器，一个是标签选择器*/
+.nav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.nav a {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+/*这个颜色还是不好看*/
+.nav a:hover {
+    color: #FF4D4D;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav ul li {
+    display: inline;/*水平片列*/
+}
+nav ul li a {
+    color: #333333;
+    text-decoration: none;/*去掉下划线*/
+    font-size: 18px;
+}
+main {
+    display: flex;
+    flex-direction: column;/*垂直排列*/
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f0f8ff;
+    transition: background-color 0.5s ease;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;/*这两个配色好看*/
+    width: 90%;
+    max-width: 800px;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: #333333;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    justify-content: center; 
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+p {
+    text-align: left; /* 段落文本左对齐 */
+    width: 100%; /* 确保段落宽度占满父容器 */
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.animated {
+    animation: fadeIn 2s, slideIn 2s;
+}

@@ -1,0 +1,64 @@
+/*此文件用于渲染博客首页、引导栏等*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*默认情况下，CSS盒模型的宽度和高度只包括内容区域，不包括内边距和边框。这意味着如果你设置一个元素的宽度为100像素，加上内边距和边框后，实际宽度会大于100像素。
+    box-sizing: border-box; 会改变盒模型的计算方式，使宽度和高度包括全部。这使得布局更加直观和容易控制。*/
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    overflow-x: hidden;/*禁止水平滚动条出现， 用于控制元素在水平方向上的溢出*/
+}
+
+.header {
+    display: flex;/*设置为弹性布局*/
+    justify-content: space-between;/*设置水平排列方式，元素在水平方向上均匀分布，我两个元素正好就两端对齐*/
+    align-items: center;/*元素在垂直方向上居中对齐*/
+    padding: 20px 50px;/*上下边距为20px，左右边距为50px*/
+    background-color: rgba(255, 255, 255, 0.9);/*背景色白色，有一些透明度，厉害吧！*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);/*加个黑色阴影*/
+    position: fixed;/*使header固定不动，也就是说我滚动页面header也不会移动*/
+    width: 100%;/*设置宽度，占据整个窗口宽度*/
+    top: 0;/*设置header距离顶部的距离*/
+    z-index: 100;/*z-index 的值越大，元素在堆叠顺序中越靠上，确保header在所有内容之上*/
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;/*圆角半径为50%，这样就是个圆，似乎50以上都是圆*/
+    display: flex;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+    color: white;/*字体颜色为白色*/
+    font-weight: bold;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;/*去掉下划线*/
+    color: #2c3e50;
+    font-weight: 500;/*字体粗细为500，中等粗细*/
+    font-size: 18px;
+    transition: color 0.3s;/*颜色变化的过渡，指定过渡效果于color属性，持续0.3s*/
+}
+
+.nav a:hover {
+    color: #3498db;
+}/*hover表示鼠标悬停时的状态*/
